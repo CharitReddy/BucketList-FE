@@ -31,5 +31,5 @@ export const { Context, Provider } = createDataContext(
   {
     changeTheme,
   },
-  INITIAL_STATE,
+  INITIAL_STATE
 );

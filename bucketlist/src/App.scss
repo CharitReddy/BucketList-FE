@@ -1,0 +1,14 @@
+@import '../src/variables.scss';
+@import '../src/functions.scss';
+
+.app-container {
+  min-height: 100vh;
+}
+
+.theme-dark {
+  @include background-color($dark, $white);
+}
+
+.theme-light {
+  @include background-color($white, $black);
+}

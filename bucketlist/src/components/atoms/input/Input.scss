@@ -1,0 +1,10 @@
+@import '../../../variables.scss';
+@import '../../../functions.scss';
+
+.input-dark {
+  @include background-color($gray, $white);
+}
+
+.input-light {
+  @include background-color($white, $black);
+}

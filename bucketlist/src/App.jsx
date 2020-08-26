@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
 import './App.css';
-import Button from './Components/Atoms/Button';
+import Button from './components/atoms/button';
 import { Context as themeContext } from './context/ThemeContext';
 import { THEME_LIGHT, THEME_DARK } from './context/themeConstants';
-import Routes from '../src/Components/routes';
+import Routes from './components/routes';
+import './App.scss';
+import useTheme from './helpers/useTheme';
 
 function App() {
-  const { state, changeTheme } = useContext(themeContext);
-  const { theme } = state;
+  const theme = useTheme();
 
   return (
     <>
-      <div>
+      <div className={`app-container theme-${theme}`}>
         <Routes />
       </div>
     </>
