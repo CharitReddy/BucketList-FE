@@ -3,6 +3,7 @@ import './App.css';
 import Button from './Components/Atoms/Button';
 import { Context as themeContext } from './context/ThemeContext';
 import { THEME_LIGHT, THEME_DARK } from './context/themeConstants';
+import Routes from '../src/Components/routes';
 
 function App() {
   const { state, changeTheme } = useContext(themeContext);
@@ -11,14 +12,7 @@ function App() {
   return (
     <>
       <div>
-        <Button
-          onClick={() => {
-            console.log(theme);
-            changeTheme(theme === 'light' ? THEME_DARK : THEME_LIGHT);
-            console.log(theme);
-          }}
-          buttonText='Click me!'
-        />
+        <Routes />
       </div>
     </>
   );
