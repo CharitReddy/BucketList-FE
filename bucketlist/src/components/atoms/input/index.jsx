@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Input.scss';
-import useTheme from '../../../helpers/useTheme';
+import useTheme from '../../../customHooks/useTheme';
 
-export default function Input({
+const Input = ({
   accept,
   alt,
   autoComplete,
@@ -20,7 +20,7 @@ export default function Input({
   type,
   value,
   className,
-}) {
+}) => {
   const theme = useTheme();
   return (
     <>
@@ -44,4 +44,5 @@ export default function Input({
       />
     </>
   );
-}
+};
+export default Input;

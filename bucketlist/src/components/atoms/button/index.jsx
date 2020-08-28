@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.scss';
-import useTheme from '../../../helpers/useTheme';
+import './button.scss';
+import useTheme from '../../../customHooks/useTheme';
 
 const Button = ({ buttonText, onClick, type }) => {
   const theme = useTheme();

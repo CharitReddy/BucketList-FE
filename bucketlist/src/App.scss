@@ -1,8 +1,18 @@
 @import '../src/variables.scss';
 @import '../src/functions.scss';
 
+html {
+  font-size: 62.5%;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+}
+
 .app-container {
   min-height: 100vh;
+  position: relative;
 }
 
 .theme-dark {
