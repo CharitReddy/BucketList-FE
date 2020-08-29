@@ -4,6 +4,8 @@ import useTheme from '../../customHooks/useTheme';
 import NavItems from '../molecules/navItems';
 import Overlay from '../atoms/overlay';
 import SideBar from '../molecules/sideBar';
+import Button from '../atoms/button';
+import headerButtons from './headerConstants';
 
 export default function Header() {
   const theme = useTheme();
@@ -33,7 +35,7 @@ export default function Header() {
   };
 
   return (
-    <header className='header'>
+    <header className={`${theme} header`}>
       <Overlay
         isVisible={isNavVisible}
         onClick={() => setNavVisibility(false)}
@@ -44,7 +46,15 @@ export default function Header() {
         {!isSmallScreen ? (
           <NavItems />
         ) : (
-          <button onClick={toggleNav}>Menu</button>
+          <>
+            {headerButtons.map((button) => (
+              <Button
+                buttonText={button.buttonText}
+                onClick={toggleNav}
+                type='button'
+              />
+            ))}
+          </>
         )}
       </div>
     </header>

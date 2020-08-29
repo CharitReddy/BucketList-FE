@@ -1,5 +1,11 @@
+@import '../../variables.scss';
+
+.header-light {
+  background: $navBarBackgroundLight;
+}
+
 .header {
-  background-color: white;
+  background-color: $navBarBackgroundDark;
   display: flex;
   justify-content: space-between;
   position: sticky;
