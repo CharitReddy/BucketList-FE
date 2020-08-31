@@ -4,18 +4,24 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 70%;
+  width: 0%;
+  display: none;
   background: $dark;
   z-index: 100;
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
+  margin: -1.7rem;
   transform: translateX(-200%);
   transition: ease-in 0.5s;
+  transition: all ease 0.5s;
 }
 
 .sidebar-open {
+  width: 70%;
+  display: block;
   transform: translateX(0);
+  transition: all ease 0.5s;
 }
 
 .sidebar-light {
