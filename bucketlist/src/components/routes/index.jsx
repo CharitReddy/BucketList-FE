@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Login from '../../pages/login';
-import withAuthorization from '../withAuthorization';
+// import withAuthorization from '../withAuthorization';
 import WithLayout from '../withLayout';
 
 const LoginWithLayout = WithLayout(Login);

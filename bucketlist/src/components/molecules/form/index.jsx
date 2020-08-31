@@ -10,18 +10,25 @@ const Form = ({
   children,
   submitButtonText,
   resetButtonText,
-
+  id,
   ...otherProps
 }) => {
   const theme = useTheme();
   return (
     <div>
-      <form className={`form form-${theme} ${className}`} {...otherProps}>
+      <form
+        className={`form form-${theme} ${className}`}
+        {...otherProps}
+        id={id}>
         <span>{formHeader}</span>
         {children}
 
-        <Button type='submit' buttonText={submitButtonText} />
-        <Button type='reset' buttonText={resetButtonText} />
+        <Button
+          type='submit'
+          buttonText={submitButtonText}
+          id={`submit${id}`}
+        />
+        <Button type='reset' buttonText={resetButtonText} id={`reset${id}`} />
       </form>
     </div>
   );
@@ -35,6 +42,7 @@ Form.propTypes = {
   children: PropTypes.element.isRequired,
   submitButtonText: PropTypes.string,
   resetButtonText: PropTypes.string,
+  id: PropTypes.string,
 };
 
 Form.defaultProps = {
@@ -42,4 +50,5 @@ Form.defaultProps = {
   formHeader: '',
   submitButtonText: 'Submit',
   resetButtonText: 'Reset',
+  id: '',
 };

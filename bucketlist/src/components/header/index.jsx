@@ -35,7 +35,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`${theme} header`}>
+    <header className={`header-${theme} header`}>
       <Overlay
         isVisible={isNavVisible}
         onClick={() => setNavVisibility(false)}

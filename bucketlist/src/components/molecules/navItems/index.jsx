@@ -3,6 +3,7 @@ import './navItems.scss';
 import PropTypes from 'prop-types';
 import { NavBarItems, NavBarButtons } from './navItemsConstants';
 import Button from '../../atoms/button';
+import useChangeTheme from '../../../customHooks/changeTheme';
 
 const NavItems = ({ isSideNav }) => {
   return (
@@ -10,13 +11,18 @@ const NavItems = ({ isSideNav }) => {
       {NavBarItems.map((item) => (
         <a href={item.href}>{item.text}</a>
       ))}
-
+      <Button
+        id='changeThemeButton'
+        buttonText='Change Theme'
+        onClick={useChangeTheme()}
+      />
       {NavBarButtons.map((navButtons) => (
         <Button
+          id={navButtons.id}
           buttonText={navButtons.buttonText}
-          onClick={() => {}}
-          type='button'
-          className='logoutButton'
+          onClick={navButtons.onClick}
+          type={navButtons.type}
+          className={navButtons.className}
         />
       ))}
     </nav>

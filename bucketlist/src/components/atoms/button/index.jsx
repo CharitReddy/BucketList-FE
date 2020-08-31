@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import './button.scss';
 import useTheme from '../../../customHooks/useTheme';
 
-const Button = ({ buttonText, onClick, type, className }) => {
+const Button = ({ buttonText, onClick, type, className, id }) => {
   const theme = useTheme();
 
   return (
     <>
-      <button className={`${theme} ${className}`} type={type} onClick={onClick}>
+      <button
+        className={`${theme} ${className}`}
+        type={type}
+        onClick={onClick}
+        id={id}>
         {buttonText}
       </button>
     </>
@@ -19,9 +23,11 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   type: PropTypes.string,
   className: PropTypes.string,
+  id: PropTypes.string,
 };
 Button.defaultProps = {
   type: 'button',
   className: '',
+  id: '',
 };
 export default Button;

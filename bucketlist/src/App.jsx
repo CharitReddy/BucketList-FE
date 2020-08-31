@@ -1,8 +1,4 @@
-import React, { useContext } from 'react';
-// import './App.css';
-import Button from './components/atoms/button';
-import { Context as themeContext } from './context/ThemeContext';
-import { THEME_LIGHT, THEME_DARK } from './context/themeConstants';
+import React from 'react';
 import Routes from './components/routes';
 import './App.scss';
 import useTheme from './customHooks/useTheme';

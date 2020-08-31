@@ -20,5 +20,5 @@ html {
 }
 
 .theme-light {
-  @include background-color($white, $black);
+  @include background-color($lightThemeBackground, $black);
 }

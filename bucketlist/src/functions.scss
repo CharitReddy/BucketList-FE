@@ -1,4 +1,18 @@
+@import './variables.scss';
+
 @mixin background-color($background-color, $text-color) {
   background: $background-color;
   color: $text-color;
+}
+
+@mixin default-input-styles {
+  // border: $light-gray solid 1px;
+  border: none;
+  border-radius: $border-radius;
+  padding: 5px;
+  width: 100%;
+
+  &:focus-within {
+    outline: none;
+  }
 }

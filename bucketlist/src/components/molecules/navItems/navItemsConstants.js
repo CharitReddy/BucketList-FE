@@ -16,5 +16,8 @@ export const NavBarItems = [
 export const NavBarButtons = [
   {
     buttonText: 'Logout',
+    id: 'logoutButton',
+    className: 'logoutButton',
+    type: 'Button',
   },
 ];
