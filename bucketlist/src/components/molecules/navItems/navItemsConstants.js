@@ -17,7 +17,7 @@ export const NavBarButtons = [
   {
     buttonText: 'Logout',
     id: 'logoutButton',
-    className: 'logoutButton',
+    className: 'logout-button',
     type: 'Button',
   },
 ];

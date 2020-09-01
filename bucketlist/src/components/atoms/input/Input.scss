@@ -36,11 +36,15 @@
     width: 100%;
     height: 2px;
     position: absolute;
-    border-bottom: 2px solid $black;
+    border-bottom: 2px solid $white;
     transform: translateX(-101%);
     bottom: 2px;
     transition: all ease-in-out 0.5s;
     z-index: 0;
+
+    &-light {
+      border-bottom-color: $black;
+    }
   }
 
   .stay-line {
@@ -55,10 +59,26 @@
     .input-label {
       @include input-label-shrink();
     }
+
+    .label-light {
+      color: $black;
+    }
+
+    .label-dark {
+      color: $white;
+    }
   }
 }
 
 .input-base {
   @include default-input-styles();
   background: none;
+}
+
+.input-light {
+  color: $black;
+}
+
+.input-dark {
+  color: $white;
 }

@@ -1,14 +1,41 @@
-.dark {
-  color: white;
-  background-color: black;
+.button-base {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: none;
 }
 
-.light {
-  color: black;
-  background-color: white;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.logoutButton {
+.login-button {
+  width: 100%;
+  &-dark {
+    background: linear-gradient(-45deg, #111111, #575355, #6b6d6e, #525554);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  &-light {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+}
+
+.cancel-button {
+  display: none;
+}
+
+.logout-button {
   padding: 10px;
   outline: none;
   border: none;

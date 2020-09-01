@@ -9,7 +9,7 @@ const Button = ({ buttonText, onClick, type, className, id }) => {
   return (
     <>
       <button
-        className={`${theme} ${className}`}
+        className={`button-base ${theme} ${className} ${className}-${theme}`}
         type={type}
         onClick={onClick}
         id={id}>

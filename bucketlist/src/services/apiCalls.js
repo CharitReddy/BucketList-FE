@@ -10,6 +10,9 @@ export const USER_APIs = {
   userLogin(loginDetails) {
     return post(END_POINTS.userLogin, loginDetails);
   },
+  userSignUp(signUpDetails) {
+    return post(END_POINTS.userSignUp, signUpDetails);
+  },
 };
 
 export const TASKS_APIs = {};
