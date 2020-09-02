@@ -1,22 +1,13 @@
+@import '../../../variables.scss';
+
 .button-base {
   padding: 1rem 2rem;
   border-radius: 5px;
   border: none;
+  font-family: $button-font;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.login-button {
+.login-signup-button {
   width: 100%;
   &-dark {
     background: linear-gradient(-45deg, #111111, #575355, #6b6d6e, #525554);
@@ -31,7 +22,19 @@
   }
 }
 
-.cancel-button {
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hide-reset-button {
   display: none;
 }
 

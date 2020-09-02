@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+}
+.statusCode {
+  text-align: center;
+  font-size: 4rem;
+  color: $error;
+}
+
+.errorMessage {
+  text-align: center;
+  font-size: 3rem;
+  color: $black;
+}
+
+.redirect-text {
+  text-align: center;
+  color: $gray;
+  font-size: 2rem;
+}

@@ -1,7 +1,7 @@
 export const NavBarItems = [
   {
-    href: '/login',
-    text: 'Profile',
+    href: '/home',
+    text: 'Home',
   },
   {
     href: '/login',
