@@ -1,0 +1,13 @@
+@import '../../variables.scss';
+
+.home-title {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.home-title-dark {
+  color: $white;
+}
+.home-title-light {
+  color: $lightThemeHeadings;
+}
