@@ -1,11 +1,18 @@
 import React from 'react';
 import './navItems.scss';
 import PropTypes from 'prop-types';
-import { NavBarItems, NavBarButtons } from './navItemsConstants';
+import { useHistory } from 'react-router-dom';
+import { NavBarItems } from './navItemsConstants';
 import Button from '../../atoms/button';
 import useChangeTheme from '../../../customHooks/changeTheme';
 
 const NavItems = ({ isSideNav }) => {
+  const history = useHistory();
+  const logoutUser = () => {
+    localStorage.clear();
+    history.push('/login');
+  };
+
   return (
     <nav className={isSideNav ? `sidebar-nav` : `nav`}>
       {NavBarItems.map((item) => (
@@ -16,15 +23,13 @@ const NavItems = ({ isSideNav }) => {
         buttonText='Change Theme'
         onClick={useChangeTheme()}
       />
-      {NavBarButtons.map((navButtons) => (
-        <Button
-          id={navButtons.id}
-          buttonText={navButtons.buttonText}
-          onClick={navButtons.onClick}
-          type={navButtons.type}
-          className={navButtons.className}
-        />
-      ))}
+      <Button
+        buttonText='Logout'
+        id='logoutButton'
+        className='logout-button'
+        type='Button'
+        onClick={logoutUser}
+      />
     </nav>
   );
 };

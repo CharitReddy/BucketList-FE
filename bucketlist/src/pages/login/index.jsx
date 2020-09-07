@@ -15,7 +15,9 @@ const Login = () => {
   const userToken = getUserToken();
 
   useEffect(() => {
-    if (userToken) history.push('/');
+    if (userToken) {
+      history.push('/');
+    }
   });
 
   const userLogin = (event) => {

@@ -3,6 +3,7 @@ const END_POINTS = {
 
   userLogin: '/users/login',
   userSignUp: '/users',
+  getUserTasks: '/tasks',
 };
 
 export default END_POINTS;

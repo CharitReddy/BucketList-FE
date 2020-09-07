@@ -15,4 +15,8 @@ export const USER_APIs = {
   },
 };
 
-export const TASKS_APIs = {};
+export const TASKS_APIs = {
+  getUserTasks() {
+    return get(END_POINTS.getUserTasks);
+  },
+};

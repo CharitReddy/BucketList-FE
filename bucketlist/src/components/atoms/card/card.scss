@@ -1,0 +1,10 @@
+@import '../../../variables.scss';
+
+.card-base {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: $cardBackgroundDark;
+  border-radius: 5px;
+}
