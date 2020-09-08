@@ -5,12 +5,14 @@ import SignUp from '../../pages/signup';
 import withAuthorization from '../withAuthorization';
 import withLayout from '../withLayout';
 import Home from '../../pages/home';
+import OpenTask from '../../pages/openTask';
 
 const LoginWithLayout = withLayout(Login);
 const HomeWithLayout = withLayout(Home);
 const HomeWithAuth = withAuthorization(HomeWithLayout);
-// const LoginWithAuthorization = withAuthorization(Login);
-// const LoginWithLayout = WithLayout(LoginWithAuthorization);
+const OpenTaskWithLayout = withLayout(OpenTask);
+const OpenTaskWithAuth = withAuthorization(OpenTaskWithLayout);
+
 export default function Routes() {
   return (
     <Switch>
@@ -20,6 +22,7 @@ export default function Routes() {
       <Route exact path='/'>
         <Redirect to='/home' />
       </Route>
+      <Route path='/openTask/:taskID' exact component={OpenTaskWithAuth} />
     </Switch>
   );
 }

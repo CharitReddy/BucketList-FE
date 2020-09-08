@@ -3,8 +3,18 @@
 .card-base {
   margin: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
   background-color: $cardBackgroundDark;
   border-radius: 5px;
+}
+
+.card-title-base {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.right-arrow path {
+  fill: $white;
 }
