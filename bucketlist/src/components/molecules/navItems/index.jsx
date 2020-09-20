@@ -36,4 +36,5 @@ const NavItems = ({ isSideNav }) => {
 
 export default NavItems;
 
-NavItems.propTypes = { isSideNav: PropTypes.bool.isRequired };
+NavItems.propTypes = { isSideNav: PropTypes.bool };
+NavItems.defaultProps = { isSideNav: false };

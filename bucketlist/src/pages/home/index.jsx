@@ -24,7 +24,7 @@ const Home = () => {
   const expandTask = (taskID) => {
     history.push({
       pathname: `/openTask/${taskID}`,
-      state: userTasks,
+      state: userTasks.filter((task) => task._id === taskID),
     });
   };
 

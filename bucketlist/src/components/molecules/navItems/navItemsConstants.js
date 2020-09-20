@@ -4,7 +4,7 @@ export const NavBarItems = [
     text: 'Home',
   },
   {
-    href: '/login',
+    href: '/addTask',
     text: 'Add',
   },
   {

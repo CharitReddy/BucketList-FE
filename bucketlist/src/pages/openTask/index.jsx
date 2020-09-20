@@ -1,8 +1,9 @@
 import React from 'react';
-import { useHistory, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-const OpenTask = (props) => {
-  console.log(props);
+const OpenTask = ({ history }) => {
+  // const history = useHistory();
+  console.log(history.location.state);
   return <div>HI</div>;
 };
 
