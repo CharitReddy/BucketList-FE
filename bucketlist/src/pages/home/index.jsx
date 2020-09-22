@@ -34,7 +34,11 @@ const Home = () => {
         {HOME_MESSAGES.homeTitle}
       </h2>
       {userTasks.map((task) => (
-        <Card cardTitle={task.name} onClick={() => expandTask(task._id)} />
+        <Card
+          cardTitle={task.name}
+          onClick={() => expandTask(task._id)}
+          key={`task-card-${task._id}`}
+        />
       ))}
     </div>
   );

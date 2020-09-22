@@ -16,7 +16,9 @@ const UserProfile = () => {
   return (
     <div className={`user-profile user-profile-${theme}`}>
       {Object.keys(userProfile).map((key) => (
-        <p className={`user-details user-details-${theme}`}>
+        <p
+          className={`user-details user-details-${theme}`}
+          key={`user-details-${key}`}>
           {userProfile[key]}
         </p>
       ))}

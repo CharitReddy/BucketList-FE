@@ -21,3 +21,28 @@
 .close-button path {
   fill: $warning;
 }
+
+.back-button {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  &-dark {
+    color: $white;
+  }
+  &-light {
+    color: $black;
+  }
+}
+
+.back-button-icon {
+  &-dark path {
+    fill: $white;
+  }
+  &-light path {
+    fill: $black;
+  }
+}
+
+.color-red path {
+  fill: $error;
+}

@@ -21,7 +21,9 @@ const NavItems = ({ isSideNav }) => {
   return (
     <nav className={isSideNav ? `sidebar-nav` : `nav`}>
       {NavBarItems.map((item) => (
-        <a href={item.href}>{item.text}</a>
+        <a href={item.href} key={`nav-items-${item.href}`}>
+          {item.text}
+        </a>
       ))}
       <Button
         id='changeThemeButton'

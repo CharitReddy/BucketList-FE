@@ -8,10 +8,6 @@ export const NavBarItems = [
     text: 'Add',
   },
   {
-    href: '/login',
-    text: 'View Tasks',
-  },
-  {
     href: '/profile',
     text: 'Profile',
   },

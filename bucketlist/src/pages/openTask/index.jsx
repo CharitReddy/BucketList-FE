@@ -12,6 +12,7 @@ import { ReactComponent as Complete } from '../../assets/icons/complete.svg';
 import { ReactComponent as Close } from '../../assets/icons/close.svg';
 import useTheme from '../../customHooks/useTheme';
 import { TASKS_APIs } from '../../services/apiCalls';
+import { ReactComponent as Back } from '../../assets/icons/back.svg';
 
 const OpenTask = ({ history }) => {
   const theme = useTheme();
@@ -33,8 +34,30 @@ const OpenTask = ({ history }) => {
     setModalVisibility(!modalVisibility);
   };
 
+  document.ondragenter = function dragAction(event) {
+    if (event.target.id === `${currentTask._id}-delete-button`) {
+      document
+        .getElementById(`${currentTask._id}-delete-button`)
+        .classList.toggle('color-red');
+      console.log('abce');
+    }
+  };
+
+  document.ondrop = function dragDelete(event) {
+    console.log('qkejfkjqjkjwq');
+    event.preventDefault();
+    if (event.target.id === `${currentTask._id}-delete-button`) {
+      // deleteTask();
+      console.log('deleteeeeeeeeeeeee');
+    }
+  };
+
   return (
     <div>
+      <span className={`back-button back-button-${theme}`}>
+        <Back className={`back-button-icon-${theme}`} />
+        Back to all Tasks
+      </span>
       <TaskCard
         taskTitle={currentTask.name}
         taskMotivation={currentTask.motivation}
@@ -49,11 +72,13 @@ const OpenTask = ({ history }) => {
           onClick={() => console.log('SVG Clicked')}
           id={`${currentTask._id}-edit-button`}
         />
-        <Delete
-          className={`delete-button delete-button-${theme}`}
-          onClick={() => deleteTask(currentTask._id)}
-          id={`${currentTask._id}-delete-button`}
-        />
+        <div id='delete-task'>
+          <Delete
+            className={`delete-button delete-button-${theme}`}
+            onClick={() => deleteTask(currentTask._id)}
+            id={`${currentTask._id}-delete-button`}
+          />
+        </div>
         {currentTask.completed ? (
           <Close
             className={`close-button close-button-${theme}`}
