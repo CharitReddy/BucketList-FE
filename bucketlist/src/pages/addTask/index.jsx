@@ -7,18 +7,15 @@ import {
   ADD_TASKS_STATIC_DATA,
   ADD_TASK_BUTTONS,
 } from './addTaskConstants';
+import useTheme from '../../customHooks/useTheme';
+import './addTask.scss';
 
 const AddTask = () => {
+  const theme = useTheme();
   const [taskType, setTaskType] = useState('travel');
 
   const setTaskFields = (type) => {
     setTaskType(type);
-
-    console.log(
-      Object.keys(ADD_TASKS_FIELDS[taskType]).map((item) => {
-        console.log(item);
-      })
-    );
   };
 
   return (
@@ -27,16 +24,35 @@ const AddTask = () => {
         <Button
           buttonText={ADD_TASK_BUTTONS[key]}
           onClick={() => setTaskFields(ADD_TASK_BUTTONS[key].toLowerCase())}
+          key={`${key}-selector-button`}
         />
       ))}
+      <Form
+        className={`add-task-form add-task-${theme}`}
+        key='add-new-task-form'>
+        <Input
+          label={ADD_TASKS_FIELDS[taskType].name}
+          key={`${ADD_TASKS_FIELDS[taskType].name}-input`}
+        />
+        <Input
+          label={ADD_TASKS_FIELDS[taskType].motivation}
+          key={`${ADD_TASKS_FIELDS[taskType].motivation}-input`}
+        />
+        <Input
+          label={ADD_TASKS_FIELDS[taskType].others.name}
+          key={`${ADD_TASKS_FIELDS[taskType].others}-input`}
+        />
 
-      <Form>
-        {Object.keys(ADD_TASKS_FIELDS[taskType]).map((key) => {
-          console.log(ADD_TASKS_FIELDS[taskType][JSON.stringify(key)]);
-          return (
-            <Input label={ADD_TASKS_FIELDS[taskType][JSON.stringify(key)]} />
-          );
-        })}
+        <textarea
+          placeholder={ADD_TASKS_FIELDS[taskType].objective}
+          rows={5}
+          key={`${ADD_TASKS_FIELDS[taskType].objective}-textarea`}
+        />
+        <textarea
+          placeholder={ADD_TASKS_FIELDS[taskType].others.description}
+          rows={5}
+          key={`${ADD_TASKS_FIELDS[taskType].others.description}-textarea`}
+        />
       </Form>
     </div>
   );

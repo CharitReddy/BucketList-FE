@@ -3,9 +3,19 @@
 .overlay {
   height: 100vh;
   width: 100vw;
-  background: $transparentGray;
+  background: $overlayBackground;
   z-index: 100;
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+
+  .modal-content {
+    width: 70%;
+    background: $white;
+    height: 30vh;
+    margin-top: 7rem;
+    border-radius: 5px;
+  }
 }

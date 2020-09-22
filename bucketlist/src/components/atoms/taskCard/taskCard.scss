@@ -1,0 +1,33 @@
+@import '../../../variables.scss';
+
+.task-card-base {
+  margin: 1rem;
+  border: 0.1rem solid $white;
+  border-radius: 5px;
+  background: $dark;
+  .task-card-titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  hr {
+    width: 80%;
+  }
+}
+
+.task-headers {
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  display: block;
+  font-weight: bold;
+}
+
+.card-title-base {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.task-details {
+  padding: 0rem 0.7rem 0.7rem 0.7rem;
+  font-weight: lighter;
+}

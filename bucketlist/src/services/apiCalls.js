@@ -4,7 +4,7 @@ import END_POINTS from './endpoints';
 const { get } = apiClient;
 const { post } = apiClient;
 const { patch } = apiClient;
-// const { delete } = apiClient;
+const deleteMethod = apiClient.delete;
 
 export const USER_APIs = {
   userLogin(loginDetails) {
@@ -13,10 +13,24 @@ export const USER_APIs = {
   userSignUp(signUpDetails) {
     return post(END_POINTS.userSignUp, signUpDetails);
   },
+  userLogout() {
+    return post(END_POINTS.userLogout);
+  },
+  userLogoutAllSessions() {
+    return post(END_POINTS.userLogoutAllSessions);
+  },
 };
 
 export const TASKS_APIs = {
   getUserTasks() {
     return get(END_POINTS.getUserTasks);
+  },
+
+  updateTaskById(taskID, updatedTask) {
+    return patch(END_POINTS.updateTaskById + taskID, updatedTask);
+  },
+
+  deleteTaskById(taskID) {
+    return deleteMethod(END_POINTS.updateTaskById + taskID);
   },
 };

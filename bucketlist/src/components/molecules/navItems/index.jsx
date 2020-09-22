@@ -5,12 +5,17 @@ import { useHistory } from 'react-router-dom';
 import { NavBarItems } from './navItemsConstants';
 import Button from '../../atoms/button';
 import useChangeTheme from '../../../customHooks/changeTheme';
+import { USER_APIs } from '../../../services/apiCalls';
 
 const NavItems = ({ isSideNav }) => {
   const history = useHistory();
   const logoutUser = () => {
-    localStorage.clear();
-    history.push('/login');
+    USER_APIs.userLogout()
+      .then(() => {
+        localStorage.clear();
+        history.push('/login');
+      })
+      .catch((error) => console.log(error));
   };
 
   return (

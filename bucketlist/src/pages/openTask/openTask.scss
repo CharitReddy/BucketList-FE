@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+.open-task-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.edit-button path {
+  fill: $white;
+}
+
+.edit-button-light path {
+  fill: $black;
+}
+.complete-button path {
+  fill: $complete;
+}
+
+.close-button path {
+  fill: $warning;
+}

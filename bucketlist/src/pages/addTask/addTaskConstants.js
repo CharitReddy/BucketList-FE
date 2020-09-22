@@ -10,7 +10,7 @@ export const ADD_TASKS_FIELDS = {
     },
   },
   travel: {
-    type: 'travel',
+    type: 'Travel',
     name: `Where do you want to travel next?`,
     motivation: `What made you choose this destination?`,
     objective: `What all do you wish to do at that place?`,

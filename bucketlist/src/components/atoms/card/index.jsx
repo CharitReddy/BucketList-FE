@@ -7,16 +7,18 @@ import { ReactComponent as RightArrow } from '../../../assets/icons/rightArrow.s
 const Card = ({ cardTitle, onClick, tabIndex }) => {
   const theme = useTheme();
   return (
-    <div
-      className={`card-base card-${theme}`}
-      onClick={onClick}
-      role='button'
-      tabIndex={tabIndex}
-      onKeyUp={(event) => {
-        if (event.keyCode === 13) onClick();
-      }}>
-      <p className={`card-title-base card-title-${theme}`}>{cardTitle}</p>
-      <RightArrow className='right-arrow' />
+    <div>
+      <div
+        className={`card-base card-${theme}`}
+        onClick={onClick}
+        role='button'
+        tabIndex={tabIndex}
+        onKeyUp={(event) => {
+          if (event.keyCode === 13) onClick();
+        }}>
+        <p className={`card-title-base card-title-${theme}`}>{cardTitle}</p>
+        <RightArrow className='right-arrow' />
+      </div>
     </div>
   );
 };
@@ -27,10 +29,12 @@ Card.propTypes = {
   cardTitle: PropTypes.string,
   onClick: PropTypes.func,
   tabIndex: PropTypes.number,
+  children: PropTypes.element,
 };
 
 Card.defaultProps = {
   cardTitle: '<Task>',
   onClick: () => {},
   tabIndex: 1,
+  children: <></>,
 };

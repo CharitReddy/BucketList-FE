@@ -20,6 +20,7 @@
   "rules": {
     "react/button-has-type": "off",
     "react/jsx-props-no-spreading": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-underscore-dangle": "off"
   }
 }
