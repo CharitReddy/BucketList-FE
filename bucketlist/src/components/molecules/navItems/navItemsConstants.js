@@ -11,6 +11,10 @@ export const NavBarItems = [
     href: '/login',
     text: 'View Tasks',
   },
+  {
+    href: '/profile',
+    text: 'Profile',
+  },
 ];
 
 export const NavBarButtons = [

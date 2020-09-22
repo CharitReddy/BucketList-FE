@@ -13,6 +13,9 @@ export const USER_APIs = {
   userSignUp(signUpDetails) {
     return post(END_POINTS.userSignUp, signUpDetails);
   },
+  getUserProfile() {
+    return get(END_POINTS.getUserProfile);
+  },
   userLogout() {
     return post(END_POINTS.userLogout);
   },

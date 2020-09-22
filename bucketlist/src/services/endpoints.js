@@ -2,9 +2,10 @@ const END_POINTS = {
   baseURL: 'http://127.0.0.1:8000/',
 
   userLogin: '/users/login',
+  userSignUp: '/users',
+  getUserProfile: '/users/me',
   userLogout: '/users/logout',
   userLogoutAllSessions: '/users/logoutAll',
-  userSignUp: '/users',
   getUserTasks: '/tasks',
 
   // For updating and deletion

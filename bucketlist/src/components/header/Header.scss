@@ -12,3 +12,12 @@
 .header-light {
   background: $navBarBackgroundLight;
 }
+
+.hamburger-menu {
+  &-dark path {
+    fill: $white;
+  }
+  &-light path {
+    fill: $black;
+  }
+}

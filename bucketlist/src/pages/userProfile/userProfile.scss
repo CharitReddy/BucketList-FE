@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+.user-profile {
+  height: 70vh;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 10px;
+  &-dark {
+    background: linear-gradient($cardBackgroundDark);
+  }
+  &-light {
+    background: linear-gradient($cardBackgroundLight);
+  }
+}
+
+.user-details {
+  font-weight: bold;
+  font-size: 3rem;
+  overflow: hidden;
+
+  &-dark {
+    color: $white;
+    font-weight: bold;
+  }
+  &-light {
+    color: $black;
+  }
+}

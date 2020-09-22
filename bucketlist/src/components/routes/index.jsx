@@ -7,6 +7,7 @@ import withLayout from '../withLayout';
 import Home from '../../pages/home';
 import OpenTask from '../../pages/openTask';
 import AddTask from '../../pages/addTask';
+import UserProfile from '../../pages/userProfile';
 
 const LoginWithLayout = withLayout(Login);
 const HomeWithLayout = withLayout(Home);
@@ -15,12 +16,15 @@ const OpenTaskWithLayout = withLayout(OpenTask);
 const OpenTaskWithAuth = withAuthorization(OpenTaskWithLayout);
 const AddTaskWithLayout = withLayout(AddTask);
 const AddTaskWithAuth = withAuthorization(AddTaskWithLayout);
+const UserProfileWithLayout = withLayout(UserProfile);
+const UserProfileWithAuth = withAuthorization(UserProfileWithLayout);
 
 export default function Routes() {
   return (
     <Switch>
       <Route path='/login' exact component={LoginWithLayout} />
       <Route path='/signUp' exact component={SignUp} />
+      <Route path='/profile' exact component={UserProfileWithAuth} />
       <Route path='/home' exact component={HomeWithAuth} />
       <Route path='/addTask' exact component={AddTaskWithAuth} />
       <Route exact path='/'>

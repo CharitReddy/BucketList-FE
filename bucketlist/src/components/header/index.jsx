@@ -4,8 +4,7 @@ import useTheme from '../../customHooks/useTheme';
 import NavItems from '../molecules/navItems';
 import Overlay from '../atoms/overlay';
 import SideBar from '../molecules/sideBar';
-import Button from '../atoms/button';
-import headerButtons from './headerConstants';
+import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg';
 
 export default function Header() {
   const theme = useTheme();
@@ -47,13 +46,18 @@ export default function Header() {
           <NavItems />
         ) : (
           <>
-            {headerButtons.map((button) => (
+            {/* {headerButtons.map((button) => (
               <Button
                 buttonText={button.buttonText}
                 onClick={toggleNav}
                 type='button'
               />
-            ))}
+            ))} */}
+            <Hamburger
+              onClick={toggleNav}
+              type='button'
+              className={`hamburger-menu-${theme}`}
+            />
           </>
         )}
       </div>
