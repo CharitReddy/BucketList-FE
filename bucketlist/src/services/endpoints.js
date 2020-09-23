@@ -4,11 +4,13 @@ const END_POINTS = {
   userLogin: '/users/login',
   userSignUp: '/users',
   getUserProfile: '/users/me',
+  getUserPicture: '/users/avatar/',
   userLogout: '/users/logout',
   userLogoutAllSessions: '/users/logoutAll',
-  getUserTasks: '/tasks',
+  // For getting and posting.
+  tasks: '/tasks',
 
-  // For updating and deletion
+  // For updating and deletion.
   updateTaskById: '/tasks/',
 };
 

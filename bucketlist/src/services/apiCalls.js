@@ -16,6 +16,9 @@ export const USER_APIs = {
   getUserProfile() {
     return get(END_POINTS.getUserProfile);
   },
+  getUserPicture(id) {
+    return get(END_POINTS.getUserPicture + id);
+  },
   userLogout() {
     return post(END_POINTS.userLogout);
   },
@@ -26,7 +29,11 @@ export const USER_APIs = {
 
 export const TASKS_APIs = {
   getUserTasks() {
-    return get(END_POINTS.getUserTasks);
+    return get(END_POINTS.tasks);
+  },
+
+  addNewTask(task) {
+    return post(END_POINTS.tasks, task);
   },
 
   updateTaskById(taskID, updatedTask) {

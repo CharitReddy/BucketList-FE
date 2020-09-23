@@ -24,7 +24,7 @@ const OpenTask = ({ history }) => {
     TASKS_APIs.updateTaskById(currentTask._id, taskDetails).then((response) => {
       setCurrentTask(response.data);
     });
-  }, [taskStatus]);
+  }, [taskStatus, currentTask._id]);
 
   const deleteTask = (taskId) => {
     TASKS_APIs.deleteTaskById(taskId);

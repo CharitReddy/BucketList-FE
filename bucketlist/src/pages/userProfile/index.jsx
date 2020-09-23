@@ -4,17 +4,25 @@ import useTheme from '../../customHooks/useTheme';
 import './userProfile.scss';
 
 const UserProfile = () => {
+  const userID = localStorage.getItem('userID');
   const theme = useTheme();
   const [userProfile, setUserProfile] = useState({});
+  const [userPicture, setUserPicture] = useState('');
   useEffect(() => {
     USER_APIs.getUserProfile().then((response) => {
       setUserProfile(response.data);
+      USER_APIs.getUserPicture(userID).then((pictureResponse) => {
+        setUserPicture(pictureResponse.data);
+      });
     });
   }, []);
-  console.log(userProfile);
 
   return (
     <div className={`user-profile user-profile-${theme}`}>
+      <img
+        src={`data:image/jpeg;base64,${userPicture.toString('base64')}`}
+        alt='Profile'
+      />
       {Object.keys(userProfile).map((key) => (
         <p
           className={`user-details user-details-${theme}`}

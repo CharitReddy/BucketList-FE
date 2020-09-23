@@ -5,7 +5,7 @@ export const ADD_TASKS_FIELDS = {
     motivation: `Why do you want to do this?`,
     objective: `What is the end goal of doing this?`,
     others: {
-      name: `Any other stuff you want to add here?`,
+      name: `Any other stuff you want to add here? Like nearby places?`,
       description: `Give a description of what you're adding.`,
     },
   },
