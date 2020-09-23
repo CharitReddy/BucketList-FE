@@ -20,7 +20,7 @@ const UserProfile = () => {
   return (
     <div className={`user-profile user-profile-${theme}`}>
       <img
-        src={`data:image/jpeg;base64,${userPicture.toString('base64')}`}
+        src='http://localhost:8000/users/avatar/5f6b1a3dc848234f5c86226b'
         alt='Profile'
       />
       {Object.keys(userProfile).map((key) => (

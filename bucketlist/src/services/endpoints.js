@@ -9,7 +9,8 @@ const END_POINTS = {
   userLogoutAllSessions: '/users/logoutAll',
   // For getting and posting.
   tasks: '/tasks',
-
+  // Upload Task Files.
+  uploadPreImages: '/tasks/preTaskImages/',
   // For updating and deletion.
   updateTaskById: '/tasks/',
 };

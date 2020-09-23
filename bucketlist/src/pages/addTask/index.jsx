@@ -6,6 +6,7 @@ import { ADD_TASKS_FIELDS, ADD_TASK_BUTTONS } from './addTaskConstants';
 import useTheme from '../../customHooks/useTheme';
 import './addTask.scss';
 import { TASKS_APIs } from '../../services/apiCalls';
+import FileUpload from '../../components/atoms/fileUpload';
 
 const addTaskReducer = (state, action) => {
   switch (action.type) {
@@ -31,6 +32,7 @@ const addTaskReducer = (state, action) => {
 const AddTask = () => {
   const theme = useTheme();
   const [taskType, setTaskType] = useState('travel');
+  const [files, setFiles] = useState(undefined);
   const [state, dispatch] = useReducer(addTaskReducer, {
     type: '',
     name: '',
@@ -44,10 +46,15 @@ const AddTask = () => {
     setTaskType(type);
   };
 
-  const addNewTask = () => {
-    TASKS_APIs.addNewTask(state);
+  const addNewTask = (event) => {
+    event.preventDefault();
+    TASKS_APIs.addNewTask(state).then((response) => {
+      const taskID = response.data._id;
+      console.log(taskID);
+      TASKS_APIs.uploadPreImages(taskID, files);
+    });
   };
-
+  console.log(files);
   return (
     <div>
       {Object.keys(ADD_TASK_BUTTONS).map((key) => (
@@ -62,7 +69,7 @@ const AddTask = () => {
         key='add-new-task-form'
         submitButtonText='Add!'
         resetButtonText='Clear'
-        onSubmit={() => addNewTask()}>
+        onSubmit={(event) => addNewTask(event)}>
         <Input
           label={ADD_TASKS_FIELDS[taskType].name}
           key={`${ADD_TASKS_FIELDS[taskType].name}-input`}
@@ -105,6 +112,11 @@ const AddTask = () => {
           onChange={(event) =>
             dispatch({ type: 'description', payload: event.target.value })
           }
+        />
+        <FileUpload
+          getFiles={(data) => {
+            setFiles(data);
+          }}
         />
       </Form>
     </div>
