@@ -46,13 +46,6 @@ export default function Header() {
           <NavItems />
         ) : (
           <>
-            {/* {headerButtons.map((button) => (
-              <Button
-                buttonText={button.buttonText}
-                onClick={toggleNav}
-                type='button'
-              />
-            ))} */}
             <Hamburger
               onClick={toggleNav}
               type='button'

@@ -1,10 +1,31 @@
 @import '../../../variables.scss';
 
 .nav {
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   a {
-    margin-right: 1rem;
+    margin: 1rem;
     font-size: 1.6rem;
     text-decoration: none;
+  }
+  button {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  &-dark {
+    a {
+      color: $white;
+    }
+  }
+
+  &-light {
+    a {
+      color: $black;
+    }
   }
 }
 
@@ -18,5 +39,13 @@
     &:visited {
       color: $white;
     }
+  }
+  button {
+    margin: 0.5rem;
+  }
+  .navbar-links,
+  .navbar-buttons {
+    display: flex;
+    flex-direction: column;
   }
 }

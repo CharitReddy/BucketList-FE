@@ -7,10 +7,12 @@ import './login.scss';
 import LOGIN_MESSAGES from './LOGIN_MESSAGES';
 import setLocalStorage from '../../helpers/setLocalStorage';
 import getUserToken from '../../helpers/getUserToken';
+import Loader from '../../components/atoms/loader';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
   const userToken = getUserToken();
 
@@ -20,11 +22,14 @@ const Login = () => {
     }
   });
 
-  const userLogin = (event) => {
+  const userLogin = async (event) => {
     event.preventDefault();
     const loginDetails = { email, password };
+    setIsLoading(true);
     USER_APIs.userLogin(loginDetails)
       .then((response) => {
+        setIsLoading(false);
+
         const setUserData = [
           {
             key: 'userID',
@@ -43,6 +48,7 @@ const Login = () => {
         history.push('/home');
       })
       .catch((error) => {
+        setIsLoading(false);
         alert(error);
       });
   };
@@ -94,6 +100,7 @@ const Login = () => {
           <Link to='/signup'>{LOGIN_MESSAGES.signUpText}</Link>
         </div>
       </div>
+      {isLoading && <Loader />}
     </div>
   );
 };

@@ -6,9 +6,11 @@ import { NavBarItems } from './navItemsConstants';
 import Button from '../../atoms/button';
 import useChangeTheme from '../../../customHooks/changeTheme';
 import { USER_APIs } from '../../../services/apiCalls';
+import useTheme from '../../../customHooks/useTheme';
 
 const NavItems = ({ isSideNav }) => {
   const history = useHistory();
+  const theme = useTheme();
   const logoutUser = () => {
     USER_APIs.userLogout()
       .then(() => {
@@ -19,24 +21,28 @@ const NavItems = ({ isSideNav }) => {
   };
 
   return (
-    <nav className={isSideNav ? `sidebar-nav` : `nav`}>
-      {NavBarItems.map((item) => (
-        <a href={item.href} key={`nav-items-${item.href}`}>
-          {item.text}
-        </a>
-      ))}
-      <Button
-        id='changeThemeButton'
-        buttonText='Change Theme'
-        onClick={useChangeTheme()}
-      />
-      <Button
-        buttonText='Logout'
-        id='logoutButton'
-        className='logout-button'
-        type='Button'
-        onClick={logoutUser}
-      />
+    <nav className={isSideNav ? `sidebar-nav` : `nav nav-${theme}`}>
+      <div className='navbar-links'>
+        {NavBarItems.map((item) => (
+          <a href={item.href} key={`nav-items-${item.href}`}>
+            {item.text}
+          </a>
+        ))}
+      </div>
+      <div className='navbar-buttons'>
+        <Button
+          id='changeThemeButton'
+          buttonText='Change Theme'
+          onClick={useChangeTheme()}
+        />
+        <Button
+          buttonText='Logout'
+          id='logoutButton'
+          className='logout-button'
+          type='Button'
+          onClick={logoutUser}
+        />
+      </div>
     </nav>
   );
 };

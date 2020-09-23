@@ -9,7 +9,6 @@ import OpenTask from '../../pages/openTask';
 import AddTask from '../../pages/addTask';
 import UserProfile from '../../pages/userProfile';
 
-const LoginWithLayout = withLayout(Login);
 const HomeWithLayout = withLayout(Home);
 const HomeWithAuth = withAuthorization(HomeWithLayout);
 const OpenTaskWithLayout = withLayout(OpenTask);
@@ -22,7 +21,7 @@ const UserProfileWithAuth = withAuthorization(UserProfileWithLayout);
 export default function Routes() {
   return (
     <Switch>
-      <Route path='/login' exact component={LoginWithLayout} />
+      <Route path='/login' exact component={Login} />
       <Route path='/signUp' exact component={SignUp} />
       <Route path='/profile' exact component={UserProfileWithAuth} />
       <Route path='/home' exact component={HomeWithAuth} />
