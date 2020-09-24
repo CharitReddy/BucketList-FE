@@ -50,16 +50,16 @@ const OpenTask = ({ history }) => {
       document
         .getElementById(`${currentTask._id}-delete-button`)
         .classList.toggle('color-red');
-      console.log('abce');
+      // console.log('abce');
     }
   };
 
   document.ondrop = function dragDelete(event) {
-    console.log('qkejfkjqjkjwq');
+    // console.log('qkejfkjqjkjwq');
     event.preventDefault();
     if (event.target.id === `${currentTask._id}-delete-button`) {
       // deleteTask();
-      console.log('deleteeeeeeeeeeeee');
+      // console.log('deleteeeeeeeeeeeee');
     }
   };
 
@@ -67,13 +67,19 @@ const OpenTask = ({ history }) => {
     setTaskAction(taskStatus);
     setModalVisibility(true);
   };
-  console.log(taskAction);
+
   return (
     <div>
       <span
         className={`back-button back-button-${theme}`}
         onClick={() => history.push({ pathname: '/home' })}
-        role='button'>
+        role='button'
+        tabIndex={-1}
+        onKeyUp={(event) => {
+          if (event.keyCode === 13) {
+            history.push({ pathname: '/home' });
+          }
+        }}>
         <Back className={`back-button-icon-${theme}`} />
         Back to all Tasks
       </span>

@@ -2,19 +2,31 @@
 
 .add-task-form {
   padding: 1rem;
+  // transition: all ease-in-out 1s;
 
   input {
     // margin-top: 1rem;
     padding: 1rem;
+  }
+  &-dark {
+    textarea {
+      background: $darker;
+      color: $white;
+    }
+  }
+  &-light {
+    textarea {
+      background: $lightThemeBackground;
+      color: $black;
+    }
   }
   textarea {
     width: 90%;
     padding: 1rem;
     margin: 1rem;
     border-radius: 5px;
-    background: $dark;
     outline: none;
-    color: $white;
+    transition: all ease-in-out 0.5s;
 
     &::placeholder {
       font-weight: bold;
@@ -62,6 +74,7 @@
   display: flex;
   justify-content: space-around;
   button {
+    transition: all ease-in-out 0.5s;
     width: 20%;
     padding: 1rem;
     margin: 1rem;

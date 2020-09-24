@@ -131,7 +131,7 @@ const AddTask = () => {
       </div>
 
       <Form
-        className={`add-task-form add-task-${theme}`}
+        className={`add-task-form add-task-form-${theme}`}
         key='add-new-task-form'
         submitButtonText='Add!'
         resetButtonText='Clear'

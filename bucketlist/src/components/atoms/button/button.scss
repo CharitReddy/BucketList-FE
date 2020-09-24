@@ -5,6 +5,15 @@
   border-radius: 5px;
   border: none;
   font-family: $button-font;
+  outline: none;
+  &-dark {
+    background: $lightThemeBackground;
+    color: $black;
+  }
+  &-light {
+    background: $dark;
+    color: $white;
+  }
 }
 
 .login-signup-button {
@@ -53,6 +62,7 @@
 }
 
 .generic-submit-button {
+  transition: all ease-in-out 0.5s;
   padding: 1rem;
   width: 70%;
   margin: 1rem;
@@ -67,6 +77,7 @@
 }
 
 .generic-reset-button {
+  transition: all ease-in-out 0.5s;
   padding: 1rem;
   width: 70%;
   margin: 1rem;

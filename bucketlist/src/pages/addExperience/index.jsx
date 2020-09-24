@@ -106,6 +106,7 @@ const AddExperience = ({ history }) => {
             onChange={(event) =>
               dispatch({ type: 'rating', payload: event.target.value })
             }
+            id='experience-rating'
           />
 
           <FileUpload

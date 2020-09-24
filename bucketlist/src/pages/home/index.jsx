@@ -33,7 +33,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className='user-home'>
       <h2 className={`home-title home-title-${theme}`}>
         {HOME_MESSAGES.homeTitle}
       </h2>
