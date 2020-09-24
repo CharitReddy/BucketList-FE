@@ -11,6 +11,8 @@ const END_POINTS = {
   tasks: '/tasks',
   // Upload Task Files.
   uploadPreImages: '/tasks/preTaskImages/',
+
+  uploadPostImages: '/tasks/postTaskImages/',
   // For updating and deletion.
   updateTaskById: '/tasks/',
 };

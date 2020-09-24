@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Input from '../../components/atoms/input';
 import Form from '../../components/molecules/form';
 import { USER_APIs } from '../../services/apiCalls';
 import './signup.scss';
 import SIGNUP_MESSAGES from './SIGNUP_MESSAGES';
+import Loader from '../../components/atoms/loader';
 
 const SignUp = () => {
+  const history = useHistory();
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const todayDate = new Date().toISOString().slice(0, 10);
 
@@ -24,9 +27,13 @@ const SignUp = () => {
 
   const userSignUp = (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
     const signUpDetails = { name, dob, email, password, age };
-    USER_APIs.userSignUp(signUpDetails);
+    USER_APIs.userSignUp(signUpDetails).then(() => {
+      history.push('/home');
+      setIsLoading(false);
+    });
   };
 
   const SIGNUP_FIELDS = [
@@ -94,6 +101,7 @@ const SignUp = () => {
           <Link to='/login'>{SIGNUP_MESSAGES.loginText}</Link>
         </div>
       </div>
+      {isLoading && <Loader />}
     </div>
   );
 };

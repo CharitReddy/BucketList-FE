@@ -1,0 +1,25 @@
+@import '../../../variables.scss';
+
+.dropdownMain {
+  padding: 6px 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.35s, color 0.35s;
+}
+
+.dropdownMain option {
+  transition: all 0.5s ease;
+  transform: translateY(10px);
+  border-radius: 5px;
+  color: $black;
+}
+.dropdownMain option:hover {
+  background-color: $darker;
+}
+
+.dropdownList {
+  transition: all 0.5s ease;
+  transform: translateY(10px);
+  border-radius: 5px;
+  color: $darker;
+}

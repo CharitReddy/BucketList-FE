@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.add-experience-heading {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+  &-dark {
+    color: $white;
+  }
+  &-light {
+    color: $black;
+  }
+}

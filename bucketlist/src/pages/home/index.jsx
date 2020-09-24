@@ -5,19 +5,23 @@ import Card from '../../components/atoms/card';
 import useTheme from '../../customHooks/useTheme';
 import './home.scss';
 import HOME_MESSAGES from './HOME_MESSAGES';
+import Loader from '../../components/atoms/loader';
 
 const Home = () => {
   const theme = useTheme();
   const [userTasks, setUserTasks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
   useEffect(() => {
+    setIsLoading(true);
     TASKS_APIs.getUserTasks()
       .then((response) => {
-        console.log(response.data);
         setUserTasks(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false);
       });
   }, []);
 
@@ -40,6 +44,7 @@ const Home = () => {
           key={`task-card-${task._id}`}
         />
       ))}
+      {isLoading && <Loader />}
     </div>
   );
 };

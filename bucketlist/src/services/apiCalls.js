@@ -38,7 +38,9 @@ export const TASKS_APIs = {
   uploadPreImages(taskID, files) {
     return post(END_POINTS.uploadPreImages + taskID, files);
   },
-
+  uploadPostImages(taskID, files) {
+    return post(END_POINTS.uploadPostImages + taskID, files);
+  },
   updateTaskById(taskID, updatedTask) {
     return patch(END_POINTS.updateTaskById + taskID, updatedTask);
   },

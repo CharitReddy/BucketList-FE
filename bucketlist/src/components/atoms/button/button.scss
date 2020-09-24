@@ -51,3 +51,29 @@
   cursor: pointer;
   transition: 70ms;
 }
+
+.generic-submit-button {
+  padding: 1rem;
+  width: 70%;
+  margin: 1rem;
+  &-dark {
+    color: $black;
+    background: linear-gradient(-45deg, #cfd6ca, #3fd412);
+  }
+  &-light {
+    color: $white;
+    background: linear-gradient(-45deg, #23a6d5, #23d5ab);
+  }
+}
+
+.generic-reset-button {
+  padding: 1rem;
+  width: 70%;
+  margin: 1rem;
+  &-dark {
+    background: linear-gradient(-45deg, #b43109, #e40c0c);
+  }
+  &-light {
+    background: linear-gradient(-45deg, #ec977d, #e73939);
+  }
+}

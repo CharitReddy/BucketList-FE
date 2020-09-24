@@ -1,14 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Input from '../input';
 import { ReactComponent as AddImage } from '../../../assets/icons/addImage.svg';
 
 const FileUpload = (props) => {
+  const fileType = props;
   const uploadFile = (files) => {
     const data = new FormData();
     const filesArray = Array.prototype.slice.call(files);
 
     filesArray.forEach((file) => {
-      data.append('preTaskImages', file);
+      data.append(props.fileType, file);
     });
     props.getFiles(data);
   };
@@ -31,3 +33,12 @@ const FileUpload = (props) => {
 };
 
 export default FileUpload;
+
+FileUpload.propTypes = {
+  getFiles: PropTypes.func.isRequired,
+  fileType: PropTypes.string,
+};
+
+FileUpload.defaultProps = {
+  fileType: '',
+};

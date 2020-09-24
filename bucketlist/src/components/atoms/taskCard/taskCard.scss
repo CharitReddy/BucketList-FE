@@ -1,18 +1,30 @@
 @import '../../../variables.scss';
 
-.task-card-base {
-  margin: 1rem;
-  border: 0.1rem solid $white;
-  border-radius: 5px;
-  background: $dark;
+.task-card {
+  &-base {
+    margin: 1rem;
+    border: 0.1rem solid $white;
+    border-radius: 5px;
+  }
+  &-dark {
+    background: linear-gradient($cardBackgroundDark);
+    hr {
+      width: 80%;
+      border-top: 2px solid $white;
+    }
+  }
+  &-light {
+    background: linear-gradient($cardBackgroundLight);
+    hr {
+      width: 80%;
+      border-top: 2px solid $black;
+    }
+  }
   .task-card-titles {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-  }
-  hr {
-    width: 80%;
   }
 }
 

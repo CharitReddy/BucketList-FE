@@ -5,7 +5,7 @@ export const ADD_TASKS_FIELDS = {
     motivation: `Why do you want to do this?`,
     objective: `What is the end goal of doing this?`,
     others: {
-      name: `Any other stuff you want to add here? Like nearby places?`,
+      name: `Any other stuff you want to add here?`,
       description: `Give a description of what you're adding.`,
     },
   },
@@ -15,7 +15,17 @@ export const ADD_TASKS_FIELDS = {
     motivation: `What made you choose this destination?`,
     objective: `What all do you wish to do at that place?`,
     others: {
-      name: `Any other stuff you want to add here?`,
+      name: `Any other stuff you want to add here? Like nearby places?`,
+      description: `Give a description of what you're adding.`,
+    },
+  },
+  learn: {
+    type: 'Learn',
+    name: `What do you wish to learn?`,
+    motivation: `Why do you want to learn this?`,
+    objective: `Any relevant activities after the learning?`,
+    others: {
+      name: `Any other stuff you want to add here? Like levels of study?`,
       description: `Give a description of what you're adding.`,
     },
   },
@@ -24,6 +34,7 @@ export const ADD_TASKS_FIELDS = {
 export const ADD_TASK_BUTTONS = {
   hobby: 'Hobby',
   travel: 'Travel',
+  learn: 'Learn',
 };
 
 export const ADD_TASKS_STATIC_DATA = {};

@@ -8,6 +8,7 @@ import Home from '../../pages/home';
 import OpenTask from '../../pages/openTask';
 import AddTask from '../../pages/addTask';
 import UserProfile from '../../pages/userProfile';
+import AddExperience from '../../pages/addExperience';
 
 const HomeWithLayout = withLayout(Home);
 const HomeWithAuth = withAuthorization(HomeWithLayout);
@@ -17,6 +18,8 @@ const AddTaskWithLayout = withLayout(AddTask);
 const AddTaskWithAuth = withAuthorization(AddTaskWithLayout);
 const UserProfileWithLayout = withLayout(UserProfile);
 const UserProfileWithAuth = withAuthorization(UserProfileWithLayout);
+const AddExperienceWithLayout = withLayout(AddExperience);
+const AddExperienceWithAuth = withAuthorization(AddExperienceWithLayout);
 
 export default function Routes() {
   return (
@@ -26,6 +29,7 @@ export default function Routes() {
       <Route path='/profile' exact component={UserProfileWithAuth} />
       <Route path='/home' exact component={HomeWithAuth} />
       <Route path='/addTask' exact component={AddTaskWithAuth} />
+      <Route path='/addExperience' exact component={AddExperienceWithAuth} />
       <Route exact path='/'>
         <Redirect to='/home' />
       </Route>

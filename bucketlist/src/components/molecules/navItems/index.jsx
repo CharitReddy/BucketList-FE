@@ -1,7 +1,7 @@
 import React from 'react';
 import './navItems.scss';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { NavBarItems } from './navItemsConstants';
 import Button from '../../atoms/button';
 import useChangeTheme from '../../../customHooks/changeTheme';
@@ -17,16 +17,20 @@ const NavItems = ({ isSideNav }) => {
         localStorage.clear();
         history.push('/login');
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        localStorage.clear();
+        history.push('/login');
+        console.log(error);
+      });
   };
 
   return (
     <nav className={isSideNav ? `sidebar-nav` : `nav nav-${theme}`}>
       <div className='navbar-links'>
         {NavBarItems.map((item) => (
-          <a href={item.href} key={`nav-items-${item.href}`}>
+          <Link to={item.href} key={`nav-items-${item.href}`}>
             {item.text}
-          </a>
+          </Link>
         ))}
       </div>
       <div className='navbar-buttons'>

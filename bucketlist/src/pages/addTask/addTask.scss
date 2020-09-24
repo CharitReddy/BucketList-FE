@@ -3,6 +3,10 @@
 .add-task-form {
   padding: 1rem;
 
+  input {
+    // margin-top: 1rem;
+    padding: 1rem;
+  }
   textarea {
     width: 90%;
     padding: 1rem;
@@ -33,4 +37,57 @@
 
 #add-task-images {
   display: none;
+}
+
+.task-add-modal {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2rem;
+  color: $black;
+}
+
+.task-added-icon path {
+  fill: $complete;
+  align-self: center;
+}
+
+.task-add-failed-icon path {
+  fill: $error;
+  align-self: center;
+}
+
+.add-task-buttons {
+  display: flex;
+  justify-content: space-around;
+  button {
+    width: 20%;
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+.add-task-buttons {
+  button {
+    outline: none;
+  }
+  &-dark {
+    background: $lightThemeBackground;
+    color: $black;
+  }
+  &-light {
+    background: $darker;
+    color: $white;
+  }
+  .active {
+    &-dark {
+      color: $white;
+      background: linear-gradient($cardBackgroundDark);
+    }
+    &-light {
+      color: $black;
+      background: linear-gradient($cardBackgroundLight);
+    }
+  }
 }

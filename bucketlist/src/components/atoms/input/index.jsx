@@ -5,6 +5,7 @@ import useTheme from '../../../customHooks/useTheme';
 
 const Input = ({ label, className, value, id, title, ...otherProps }) => {
   const theme = useTheme();
+  console.log(value);
   return (
     <div className='input-container'>
       <label
