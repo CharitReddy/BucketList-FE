@@ -11,3 +11,8 @@
 .home-title-light {
   color: $lightThemeHeadings;
 }
+
+.user-home-cards {
+  display: grid;
+  grid-template-columns: auto auto;
+}

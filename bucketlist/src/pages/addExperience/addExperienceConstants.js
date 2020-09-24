@@ -1,5 +1,5 @@
 export const ADD_EXPERIENCE_FIELDS = {
-  experience: 'Things I did.',
+  experience: 'Enter the things you did here.',
   experienceDescription: 'A brief experience',
   experienceNotes: 'Any Other notes',
 };

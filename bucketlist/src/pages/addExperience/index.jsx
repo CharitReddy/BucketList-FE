@@ -77,6 +77,7 @@ const AddExperience = ({ history }) => {
           />
 
           <textarea
+            className={`add-experience-textareas-${theme}`}
             placeholder={ADD_EXPERIENCE_FIELDS.experienceDescription}
             rows={5}
             key={`${ADD_EXPERIENCE_FIELDS.experienceDescription}-textarea`}
@@ -89,6 +90,7 @@ const AddExperience = ({ history }) => {
             }
           />
           <textarea
+            className={`add-experience-textareas-${theme}`}
             placeholder={ADD_EXPERIENCE_FIELDS.experienceNotes}
             rows={5}
             key={`${ADD_EXPERIENCE_FIELDS.experienceNotes}-textarea`}

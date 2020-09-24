@@ -138,61 +138,66 @@ const AddTask = () => {
         submitButtonClass={`generic-submit-button generic-submit-button-${theme}`}
         resetButtonClass={`generic-reset-button generic-reset-button-${theme}`}
         onSubmit={(event) => addNewTask(event)}>
-        <Input
-          label={ADD_TASKS_FIELDS[taskType].name}
-          key={`${ADD_TASKS_FIELDS[taskType].name}-input`}
-          value={state.name}
-          onChange={(event) =>
-            dispatch({ type: 'name', payload: event.target.value })
-          }
-          required
-        />
-        <Input
-          label={ADD_TASKS_FIELDS[taskType].motivation}
-          key={`${ADD_TASKS_FIELDS[taskType].motivation}-input`}
-          value={state.motivation}
-          onChange={(event) =>
-            dispatch({ type: 'motivation', payload: event.target.value })
-          }
-          required
-        />
-        <Input
-          label={ADD_TASKS_FIELDS[taskType].others.name}
-          key={`${ADD_TASKS_FIELDS[taskType].others}-input`}
-          value={state.others.name}
-          onChange={(event) =>
-            dispatch({ type: 'others-name', payload: event.target.value })
-          }
-          required
-        />
+        <div className='add-task-form-fields'>
+          <div className='add-task-form-input-fields-container'>
+            <Input
+              label={ADD_TASKS_FIELDS[taskType].name}
+              key={`${ADD_TASKS_FIELDS[taskType].name}-input`}
+              value={state.name}
+              onChange={(event) =>
+                dispatch({ type: 'name', payload: event.target.value })
+              }
+              required
+            />
+            <Input
+              label={ADD_TASKS_FIELDS[taskType].motivation}
+              key={`${ADD_TASKS_FIELDS[taskType].motivation}-input`}
+              value={state.motivation}
+              onChange={(event) =>
+                dispatch({ type: 'motivation', payload: event.target.value })
+              }
+              required
+            />
+            <Input
+              label={ADD_TASKS_FIELDS[taskType].others.name}
+              key={`${ADD_TASKS_FIELDS[taskType].others}-input`}
+              value={state.others.name}
+              onChange={(event) =>
+                dispatch({ type: 'others-name', payload: event.target.value })
+              }
+              required
+            />
 
-        <textarea
-          placeholder={ADD_TASKS_FIELDS[taskType].objective}
-          rows={5}
-          key={`${ADD_TASKS_FIELDS[taskType].objective}-textarea`}
-          value={state.objective}
-          onChange={(event) =>
-            dispatch({ type: 'objective', payload: event.target.value })
-          }
-        />
-        <textarea
-          placeholder={ADD_TASKS_FIELDS[taskType].others.description}
-          rows={5}
-          key={`${ADD_TASKS_FIELDS[taskType].others.description}-textarea`}
-          value={state.others.description}
-          onChange={(event) =>
-            dispatch({
-              type: 'others-description',
-              payload: event.target.value,
-            })
-          }
-        />
-        <FileUpload
-          fileType='preTaskImages'
-          getFiles={(data) => {
-            setFiles(data);
-          }}
-        />
+            <textarea
+              placeholder={ADD_TASKS_FIELDS[taskType].objective}
+              rows={5}
+              key={`${ADD_TASKS_FIELDS[taskType].objective}-textarea`}
+              value={state.objective}
+              onChange={(event) =>
+                dispatch({ type: 'objective', payload: event.target.value })
+              }
+            />
+            <textarea
+              placeholder={ADD_TASKS_FIELDS[taskType].others.description}
+              rows={5}
+              key={`${ADD_TASKS_FIELDS[taskType].others.description}-textarea`}
+              value={state.others.description}
+              onChange={(event) =>
+                dispatch({
+                  type: 'others-description',
+                  payload: event.target.value,
+                })
+              }
+            />
+          </div>
+          <FileUpload
+            className='add-task-file-upload'
+            fileType='preTaskImages'
+            getFiles={(data) => {
+              setFiles(data);
+            }}
+          />
+        </div>
       </Form>
       <Overlay
         isVisible={modalVisibility}

@@ -2,10 +2,8 @@
 
 .add-task-form {
   padding: 1rem;
-  // transition: all ease-in-out 1s;
 
   input {
-    // margin-top: 1rem;
     padding: 1rem;
   }
   &-dark {
@@ -101,6 +99,20 @@
     &-light {
       color: $black;
       background: linear-gradient($cardBackgroundLight);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .add-task-form-fields {
+    display: flex;
+    width: 90vw;
+
+    .add-task-form-input-fields-container {
+      flex-basis: 50%;
+    }
+    .add-task-file-upload {
+      margin: 10rem;
     }
   }
 }

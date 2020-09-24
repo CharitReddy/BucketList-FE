@@ -15,7 +15,7 @@ const FileUpload = (props) => {
     props.getFiles(data);
   };
   return (
-    <div>
+    <div className={props.className}>
       <label htmlFor='add-task-images'>
         <AddImage />
       </label>
@@ -37,8 +37,10 @@ export default FileUpload;
 FileUpload.propTypes = {
   getFiles: PropTypes.func.isRequired,
   fileType: PropTypes.string,
+  className: PropTypes.string,
 };
 
 FileUpload.defaultProps = {
   fileType: '',
+  className: '',
 };

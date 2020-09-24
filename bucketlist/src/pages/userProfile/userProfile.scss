@@ -19,6 +19,7 @@
   font-weight: bold;
   font-size: 2.5rem;
   overflow: hidden;
+  text-overflow: ellipsis;
   transition: all ease-in-out 0.5s;
 
   &-dark {
@@ -27,5 +28,14 @@
   }
   &-light {
     color: $black;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .user-profile {
+    width: 40%;
+  }
+  .user-details {
+    padding: 1rem;
   }
 }

@@ -7,7 +7,7 @@ import { ReactComponent as RightArrow } from '../../../assets/icons/rightArrow.s
 const Card = ({ cardTitle, onClick, tabIndex, className }) => {
   const theme = useTheme();
   return (
-    <div>
+    <>
       <div
         className={`card-base card-${theme} ${className}`}
         onClick={onClick}
@@ -19,7 +19,7 @@ const Card = ({ cardTitle, onClick, tabIndex, className }) => {
         <p className={`card-title-base card-title-${theme}`}>{cardTitle}</p>
         <RightArrow className='right-arrow' />
       </div>
-    </div>
+    </>
   );
 };
 

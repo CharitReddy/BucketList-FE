@@ -12,3 +12,14 @@
     color: $black;
   }
 }
+
+.add-experience-textareas {
+  &-dark {
+    background: $darker;
+    color: $white;
+  }
+  &-light {
+    background: $lightThemeBackground;
+    color: $black;
+  }
+}

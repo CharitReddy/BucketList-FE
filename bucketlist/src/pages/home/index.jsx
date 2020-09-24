@@ -37,13 +37,15 @@ const Home = () => {
       <h2 className={`home-title home-title-${theme}`}>
         {HOME_MESSAGES.homeTitle}
       </h2>
-      {userTasks.map((task) => (
-        <Card
-          cardTitle={task.name}
-          onClick={() => expandTask(task._id)}
-          key={`task-card-${task._id}`}
-        />
-      ))}
+      <div className='user-home-cards'>
+        {userTasks.map((task) => (
+          <Card
+            cardTitle={task.name}
+            onClick={() => expandTask(task._id)}
+            key={`task-card-${task._id}`}
+          />
+        ))}
+      </div>
       {isLoading && <Loader />}
     </div>
   );
